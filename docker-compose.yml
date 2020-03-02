@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  intrafind:
+    network_mode: host
+    build:
+      context: .
+      dockerfile:
+        intrafind.dockerfile
+    ports:
+      - "8085:8085"
+
+  mysql:
+    container_name: mysql
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_ROOT_HOST: '127.0.0.1'
+    ports:
+      - "3309:3306"

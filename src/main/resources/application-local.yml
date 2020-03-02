@@ -1,0 +1,6 @@
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/intrafind_user_db?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root

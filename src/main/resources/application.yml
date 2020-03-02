@@ -1,0 +1,28 @@
+spring:
+  profiles: default , docker , local
+  application:
+    name: intafind
+    build:
+      version: @project.version@
+  jpa:
+    show-sql: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: validate
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    database: mysql
+
+  flyway:
+    enabled: true
+    table: schema_version
+    validate-on-migrate: false
+    baseline-on-migrate: true
+
+server:
+  servlet:
+    context-path: /intrafind
+  port: 8085
